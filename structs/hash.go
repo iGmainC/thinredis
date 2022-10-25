@@ -1,4 +1,4 @@
-package memdb
+package structs
 
 import "strconv"
 

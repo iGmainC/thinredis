@@ -3,7 +3,7 @@ package structs
 import "github.com/VincentFF/thinredis/config"
 
 const (
-	REDIS_STRING = iota
+	REDIS_STRING int = iota
 	REDIS_LIST
 	REDIS_SET
 	REDIS_ZSET
@@ -11,12 +11,13 @@ const (
 )
 
 var ShardNum = config.Configures.ShardNum
-var RedisTypes = [5]string{"string", "list", "set", "zset", "hash"}
+
+//var RedisTypes = [5]string{"string", "list", "set", "zset", "hash"}
 
 type RedisObject struct {
 	Type int
 	Lru  int64
-	Ptr  any
+	Val  any
 }
 
 type RedisDb struct {
